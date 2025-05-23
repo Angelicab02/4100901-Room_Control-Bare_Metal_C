@@ -37,6 +37,9 @@ int main(void)
     // LED Externo ON/OFF
     gpio_setup_pin(GPIOA, EXTERNAL_LED_ONOFF_PIN, GPIO_MODE_OUTPUT, 0);
 
+    // LED Externo pwm
+    gpio_setup_pin(GPIOA, EXTERNAL_LED_PWM_PIN , GPIO_MODE_AF, 2);
+
     // Botón B1
     gpio_setup_pin(GPIOC, 13, GPIO_MODE_INPUT, 0);
     nvic_exti_pc13_button_enable();

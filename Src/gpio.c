@@ -8,6 +8,7 @@
 #include "gpio.h"
 #include "rcc.h"
 #include "nvic.h"
+#include "room_control.h"
 
 void gpio_setup_pin(GPIO_TypeDef *gpio_port, uint8_t pin_number,
                     uint8_t mode, uint8_t alternate_function)
@@ -75,6 +76,8 @@ void EXTI15_10_IRQHandler(void) {
         // 2. Limpiar el flag de pendiente de la interrupción (escribiendo '1')
         EXTI->PR1 |= (1U << 13);
         // 3. Procesar boton presionado
+        room_control_on_button_press(); //añadido
+
     }
 }
 

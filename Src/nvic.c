@@ -8,6 +8,7 @@
 #include "nvic.h"
 #include "rcc.h"  // Para habilitar relojes de GPIOC y SYSCFG
 #include "uart.h"
+#include "room_control.h" //añadido
 
 
 #define NVIC_ENABLE_IRQ(IRQn) (NVIC->ISER[IRQn / 32U] |= (1UL << (IRQn % 32U)))

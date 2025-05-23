@@ -7,7 +7,7 @@
  */
 #include "systick.h"
 #include "rcc.h" // Para SYSCLK_FREQ_HZ
-
+#include "room_control.h" //añadido
 
 // Variable global para contar los ticks de milisegundos
 // 'volatile' es importante porque esta variable es modificada en una ISR
@@ -53,4 +53,5 @@ void systick_delay_ms(uint32_t ms)
 void SysTick_Handler(void)
 {
     g_systick_ms_count++;
+    room_control_on_systick(); //añadido
 }
